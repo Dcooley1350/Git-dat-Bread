@@ -13,19 +13,22 @@ namespace Pierre.BakedGoods
       int userBread = int.Parse(Console.ReadLine());
       if (userBread == 0)
       {
+        Console.WriteLine("-------------------------------");
         Console.WriteLine("Well that was stupid.");
         Bread newBread = new Bread(userBread);
         return newBread;
       }
       else if ((0 <userBread) && (userBread <= 50))
       {
+        Console.WriteLine("-------------------------------");
         Console.WriteLine("Right on we will get that wheat together so you can yeet it asap.");
         Bread newBread = new Bread(userBread);
         newBread.CalculateBOrderPrice();
-        Console.WriteLine("The Price for that bread will be " + newBread.BOrderPrice + ".");
+        Console.WriteLine("The price for that bread will be " + newBread.BOrderPrice + ".");
         return newBread;
       }
       else{
+        Console.WriteLine("-------------------------------");
         Console.WriteLine("Come on man how many do you really want? Be serious. We can't do an order over 50.");
         BreadOrderScript();
         Bread newBread = new Bread(userBread);
@@ -39,20 +42,23 @@ namespace Pierre.BakedGoods
       int userPastry = int.Parse(Console.ReadLine());
       if (userPastry == 0)
       {
+        Console.WriteLine("-------------------------------");
         Console.WriteLine("Well that was stupid.");
         Pastry newPastry = new Pastry(userPastry);
         return newPastry;
       }
       else if ((0 < userPastry) && (userPastry < 50))
       {
+        Console.WriteLine("-------------------------------");
         Console.WriteLine("Right on we will get that wheat together so you can yeet it asap.");
         Pastry newPastry = new Pastry(userPastry);
         newPastry.CalculatePOrderPrice();
-        Console.WriteLine("The price for those pastries  will be " + newPastry.POrderPrice + ".");
+        Console.WriteLine("The price for those pastries will be " + newPastry.POrderPrice + ".");
         return newPastry;
       }
       else
       {
+        Console.WriteLine("-------------------------------");
         Console.WriteLine("Come on man how many do you really want? Be serious. We can't do an order over 50.");
         PastryOrderScript();
         Pastry newPastry = new Pastry(userPastry);
