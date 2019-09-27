@@ -20,6 +20,7 @@ namespace Pierre
       Console.WriteLine("Pastry: $2; Three for $5");
       Console.WriteLine("-------------------------------");
       Console.ReadLine();
+      Console.WriteLine("We know y'all are here trying to yeet that wheat... So hit us with it. Whatchall jabronies want?");
 
       Bread breadItem = Script.BreadOrderScript();
 
