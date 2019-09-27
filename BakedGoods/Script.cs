@@ -48,7 +48,7 @@ namespace Pierre.BakedGoods
         Console.WriteLine("Right on we will get that wheat together so you can yeet it asap.");
         Pastry newPastry = new Pastry(userPastry);
         newPastry.CalculatePOrderPrice();
-        Console.WriteLine("The Price for that bread will be " + newPastry.POrderPrice + ".");
+        Console.WriteLine("The price for those pastries  will be " + newPastry.POrderPrice + ".");
         return newPastry;
       }
       else

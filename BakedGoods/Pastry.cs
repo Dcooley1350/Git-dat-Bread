@@ -23,7 +23,7 @@ namespace Pierre.BakedGoods
     {
       if (POrderAmount >= 3)
       {
-        POrderPrice = (((POrderAmount - (POrderAmount % 3))/3)*5) + ((POrderAmount % 3) *2)
+        POrderPrice = (((POrderAmount - (POrderAmount % 3))/3)*5) + ((POrderAmount % 3) *2);
       }
     }
   }
