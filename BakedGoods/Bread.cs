@@ -21,7 +21,7 @@ namespace Pierre.BakedGoods
     {
       if (BOrderAmount >= 3)
       {
-      BOrderPrice = ((BOrderAmount * LoafPrice) - ((BOrderAmount / 3) * LoafPrice));
+      BOrderPrice = (((BOrderAmount-(BOrderAmount % 3))/3)*(2*LoafPrice) +((BOrderAmount % 3)*5))
       }
     }
   }
