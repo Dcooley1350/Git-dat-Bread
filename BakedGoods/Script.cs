@@ -28,8 +28,9 @@ namespace Pierre.BakedGoods
           Console.WriteLine("Right on we will get that wheat together so you can yeet it asap.");
           Bread newBread = new Bread(userInt);
           newBread.CalculateBOrderPrice();
-          Console.WriteLine("The price for that bread will be " + newBread.BOrderPrice + ".");
+          Console.WriteLine("The price for that bread will be $" + newBread.BOrderPrice + ".");
           Console.WriteLine("-------------------------------");
+          Console.ReadLine();
           return newBread;
         }
       }
@@ -47,7 +48,7 @@ namespace Pierre.BakedGoods
     public static Pastry PastryOrderScript()
     {
       //Script to get customer Pastry order and create instance:
-      Console.WriteLine("Enter the amount of pastries uou would like to order. (if you an idiot and don't want any pastries, enter 0.");
+      Console.WriteLine("Enter the amount of pastries you would like to order. (if you an idiot and don't want any pastries, enter 0.");
       string userPastry = Console.ReadLine();
       if (Script.CreateCheckList().Contains(userPastry))
       {
@@ -66,7 +67,9 @@ namespace Pierre.BakedGoods
           Console.WriteLine("Right on we will get that wheat together so you can yeet it asap.");
           Pastry newPastry = new Pastry(userInt);
           newPastry.CalculatePOrderPrice();
-          Console.WriteLine("The price for those pastries will be " + newPastry.POrderPrice + ".");
+          Console.WriteLine("The price for those pastries will be $" + newPastry.POrderPrice + ".");
+          Console.WriteLine("-------------------------------");
+          Console.ReadLine();
           return newPastry;
         }
       }
@@ -81,14 +84,14 @@ namespace Pierre.BakedGoods
         return newPastry;
       }
     }
-       static List<string> CreateCheckList()
-      {
-        List<string> checkList = new List<string> {};
-        for (int i = 0; i <= 50 ; i++)
-        {       
-          checkList.Add(i.ToString());
-        }
-        return checkList;
+      static List<string> CreateCheckList()
+    {
+      List<string> checkList = new List<string> {};
+      for (int i = 0; i <= 50 ; i++)
+      {       
+        checkList.Add(i.ToString());
       }
+      return checkList;
+    }
   }
 }
