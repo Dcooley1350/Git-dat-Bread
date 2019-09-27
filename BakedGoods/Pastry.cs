@@ -6,9 +6,9 @@ namespace Pierre.BakedGoods
     public int POrderPrice { get; set; }
     public int PastryPrice { get; set; }
 
-    public Pastry(int pOrderAmount)
+    public Pastry()
     {
-      POrderAmount = pOrderAmount;
+      POrderAmount = 0;
       POrderPrice = 0;
       PastryPrice = 2;
     }
