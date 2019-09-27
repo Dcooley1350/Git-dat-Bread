@@ -7,12 +7,26 @@ namespace Pierre.BakedGoods
       public string BOrderFor { get; set; }
       public int BOrderAmount { get; set; }
       public double BOrderPrice { get; set; }
+      public double LoafPrice { get; set; }
 
-      public Pastry(string bOrderFor, int bOrderAmount)
+      public Bread(string bOrderFor, int bOrderAmount)
       {
         BOrderFor = bOrderFor;
         BOrderAmount = bOrderAmount;
         BOrderPrice = 0;
+        LoafPrice = 5;
+      }
+      public void CalculatePOrderPrice()
+      {
+           BOrderPrice = BOrderAmount * LoafPrice;
+           BuyTwoGetOne();
+      }
+      public void BuyTwoGetOne()
+      {
+         if (BOrderAmount >= 3)
+         {
+          BOrderPrice = ((BOrderAmount * LoafPrice) - ((BOrderAmount / 3) * LoafPrice));
+         }
       }
     }
   }
