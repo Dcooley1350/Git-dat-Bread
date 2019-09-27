@@ -19,9 +19,9 @@ namespace Pierre
       Console.WriteLine("-------------------------------");
       Console.ReadKey();
 
-      BreadOrderScript();
+      breadItem = Script.BreadOrderScript();
 
-      PastryOrderScript();
+      pastryItem = Script.PastryOrderScript();
     }
   }
 }
