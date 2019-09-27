@@ -2,14 +2,12 @@ namespace Pierre.BakedGoods
 {
   public class Pastry
   {
-    public string POrderFor { get; set; }
     public int  POrderAmount { get; set; }
-    public double POrderPrice { get; set; }
-    public double PastryPrice { get; set; }
+    public int POrderPrice { get; set; }
+    public int PastryPrice { get; set; }
 
-    public Pastry(string pOrderFor, int pOrderAmount)
+    public Pastry(int pOrderAmount)
     {
-      POrderFor = pOrderFor;
       POrderAmount = pOrderAmount;
       POrderPrice = 0;
       PastryPrice = 2;
