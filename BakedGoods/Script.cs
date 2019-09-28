@@ -5,7 +5,25 @@ namespace Pierre.BakedGoods
 {
   public class Script
   {
-    public static void BreadOrderScript(Bread newBread)
+    public static void WelcomeScript(Bread newBread, Pastry newPastry)
+    {
+      //Scipt to welcome customers and present menu:
+      Console.WriteLine("-------------------------------");
+      Console.WriteLine("Welcome to Get Dat Bread Bakery");
+      Console.WriteLine("-------------------------------");
+      Console.ReadLine();
+
+      Console.WriteLine("Menu:");
+      Console.WriteLine("-------------------------------");
+      Console.WriteLine("Loaf: $5; Buy two get one free.");
+      Console.WriteLine("Pastry: $2; Three for $5");
+      Console.WriteLine("-------------------------------");
+      Console.ReadLine();
+      Console.WriteLine("We know y'all are here trying to yeet that wheat... So hit us with it. Whatchall jabronies want?");
+      Script.BreadOrderScript(newBread, newPastry);
+    }
+
+    public static void BreadOrderScript(Bread newBread, Pastry newPastry)
     {
       //Script to get customer bread order and create instance: 
       Console.WriteLine("Enter the amount of bread you would like to add order. (if you just want them tasty pastries, enter 0.");
@@ -20,8 +38,7 @@ namespace Pierre.BakedGoods
           Console.WriteLine("-------------------------------");
           Console.WriteLine("Well that was stupid.");
           Console.WriteLine("-------------------------------");
-
-          
+          Script.PastryOrderScript(newBread, newPastry);
         }
         else
         {
@@ -31,7 +48,7 @@ namespace Pierre.BakedGoods
           Console.WriteLine("The price for all that bread will be $" + newBread.BOrderPrice + ".");
           Console.WriteLine("-------------------------------");
           Console.ReadLine();
-          
+          Script.PastryOrderScript(newBread, newPastry);
         }
       }
       else
@@ -39,11 +56,11 @@ namespace Pierre.BakedGoods
         Console.WriteLine("-------------------------------");
         Console.WriteLine("Come on man how many do you really want? Be serious. We can't do an order over 50.");
         Console.WriteLine("-------------------------------");
-        BreadOrderScript(newBread); 
+        BreadOrderScript(newBread, newPastry); 
         }
 
     }
-    public static void PastryOrderScript(Pastry newPastry)
+    public static void PastryOrderScript(Bread newBread, Pastry newPastry)
     {
       //Script to get customer Pastry order and create instance:
       Console.WriteLine("Enter the amount of pastries you would like to add to your order. (if you an idiot and don't want any pastries, enter 0.");
@@ -57,7 +74,7 @@ namespace Pierre.BakedGoods
         {
           Console.WriteLine("-------------------------------");
           Console.WriteLine("Well that was stupid.");
-
+          Script.RestartScript(newPastry, newBread);
         }
         else
         {
@@ -68,6 +85,7 @@ namespace Pierre.BakedGoods
           Console.WriteLine("The price for all those pastries will be $" + newPastry.POrderPrice + ".");
           Console.WriteLine("-------------------------------");
           Console.ReadLine();
+          Script.RestartScript(newPastry, newBread);
         }
       }
       else
@@ -75,12 +93,18 @@ namespace Pierre.BakedGoods
         Console.WriteLine("-------------------------------");
         Console.WriteLine("Come on man how many do you really want? Be serious. We can't do an order over 50.");
         Console.WriteLine("-------------------------------");
-        PastryOrderScript(newPastry);
+        PastryOrderScript(newBread, newPastry);
       }
     }
 
     public static void RestartScript(Pastry newPastry, Bread newBread)
     {
+      Console.WriteLine("Well thanks for your order, chief.");
+      //Calculate total order cost:
+      int totalOrderCost = (newPastry.POrderPrice + newBread.BOrderPrice);
+      Console.ReadLine();
+      Console.WriteLine("The total for that order is going to be $" + totalOrderCost + ".00.");
+      Console.ReadLine();
       Console.WriteLine("Are we done here or is there something I can add to your order?(Yes or No)");
       string userAnswer = Console.ReadLine();
       if (userAnswer == "Yes")
@@ -89,11 +113,11 @@ namespace Pierre.BakedGoods
         string whatToOrder = Console.ReadLine();
         if (whatToOrder == "Pastries")
         {
-          Script.PastryOrderScript(newPastry);
+          Script.BreadOrderScript(newBread, newPastry);
         }
         else if (whatToOrder == "Bread")
         {
-          Script.BreadOrderScript(newBread);
+          Script.BreadOrderScript(newBread, newPastry);
         }
         else
         {
